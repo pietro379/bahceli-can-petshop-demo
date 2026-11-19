@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bahçeli Can Petshop | Yukarı Bahçelievler, Ankara</title>
+<meta name="description" content="Bahçeli Can Petshop: taze mama, evcil hayvan ürünleri ve akvaryum malzemeleri. Mağazadan, arabaya teslim veya adrese servis. Azerbaycan Cd. 103/D, Çankaya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mist: #E9F0EE;
+    --petrol: #12303A;
+    --mustard: #F2B632;
+    --coral: #E8553D;
+    --white: #FFFFFF;
+    --petrol-soft: #3E5A63;
+    --gutter: clamp(16px, 5vw, 56px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--petrol);
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Hanken Grotesk", sans-serif;
+    line-height: 1.02;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Üst şerit */
+  .bar {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding-block: 18px;
+    font-weight: 500;
+  }
+  .bar .brand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+  .bar a.call { text-decoration: none; font-weight: 700; padding: 10px 16px; border: 2px solid var(--petrol); border-radius: 999px; white-space: nowrap; }
+  .bar a.call:hover { background: var(--petrol); color: var(--white); }
+
+  /* Hero */
+  .hero { padding: clamp(24px, 6vw, 72px) 0 clamp(40px, 7vw, 88px); }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+  .hero-grid > * { min-width: 0; }
+  .hero h1 { font-size: clamp(2.6rem, 8vw, 6.2rem); font-weight: 800; overflow-wrap: break-word; }
+  .hero h1 span { display: block; }
+  .hero .lead { margin: 24px 0 0; max-width: 34ch; font-size: 1.25rem; color: var(--petrol-soft); }
+
+  /* Raf etiketi */
+  .label {
+    background: var(--mustard);
+    border-radius: 14px;
+    padding: clamp(20px, 3vw, 32px);
+    box-shadow: 0 0 0 3px var(--petrol), 8px 10px 0 3px var(--petrol);
+    transform: rotate(-1.6deg);
+    animation: drop .7s cubic-bezier(.2,.9,.3,1.2) both;
+    position: relative;
+  }
+  .label::before {
+    content: ""; position: absolute; top: 14px; right: 18px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--mist); box-shadow: inset 0 0 0 3px var(--petrol);
+  }
+  @keyframes drop { from { transform: translateY(-40px) rotate(4deg); opacity: 0; } to { transform: rotate(-1.6deg); opacity: 1; } }
+  .label h2 { font-size: clamp(1.6rem, 3.4vw, 2.1rem); font-weight: 800; max-width: 12ch; }
+  .label p { margin: 8px 0 18px; font-weight: 500; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0 0 22px; border: 0; }
+  .chips legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .chips label {
+    cursor: pointer; font-weight: 700; padding: 10px 18px; border-radius: 999px;
+    border: 2.5px solid var(--petrol); background: transparent; user-select: none;
+    transition: background .15s, color .15s;
+  }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips input:checked + span { background: var(--petrol); color: var(--white); }
+  .chips label { padding: 0; }
+  .chips label span { display: block; padding: 10px 18px; border-radius: 999px; }
+  .chips input:focus-visible + span { outline: 3px solid var(--coral); outline-offset: 3px; }
+  .chips label:hover span { background: rgba(18,48,58,.1); }
+  .chips input:checked + span:hover { background: var(--petrol); }
+  .cta {
+    display: block; text-align: center; text-decoration: none; font-weight: 800; font-size: 1.1rem;
+    background: var(--petrol); color: var(--white); padding: 16px 20px; border-radius: 12px;
+  }
+  .cta:hover { background: #0b2028; }
+  .label .alt { margin: 14px 0 0; font-size: .95rem; }
+  .label .alt a { font-weight: 700; }
+
+  /* Bölümler */
+  section { padding: clamp(40px, 7vw, 88px) 0; }
+  .section-head { margin-bottom: 32px; max-width: 30ch; }
+  .section-head h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
+
+  .reasons { background: var(--white); }
+  .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 48px); }
+  .reason h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+  .reason p { margin: 0; color: var(--petrol-soft); }
+  .rating {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    margin-top: 44px; padding-top: 28px; border-top: 3px solid var(--petrol);
+  }
+  .rating strong { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1; }
+  .rating span { font-weight: 500; max-width: 36ch; }
+
+  .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .way { padding: 26px; border-radius: 16px; background: var(--white); border: 3px solid var(--petrol); }
+  .way:nth-child(2) { background: var(--mustard); }
+  .way:nth-child(3) { background: var(--petrol); color: var(--white); border-color: var(--petrol); }
+  .way h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 8px; }
+  .way p { margin: 0; }
+
+  .visit { background: var(--petrol); color: var(--white); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .visit h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
+  .visit address { font-style: normal; font-size: 1.25rem; margin: 20px 0; }
+  .visit dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; }
+  .visit dt { color: var(--mustard); font-weight: 700; }
+  .visit dd { margin: 0; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { text-decoration: none; font-weight: 800; padding: 15px 22px; border-radius: 12px; }
+  .btn.primary { background: var(--mustard); color: var(--petrol); }
+  .btn.primary:hover { background: #ffc84a; }
+  .btn.ghost { border: 2.5px solid var(--white); color: var(--white); }
+  .btn.ghost:hover { background: var(--white); color: var(--petrol); }
+
+  footer { padding: 28px 0 40px; font-size: .9rem; color: var(--petrol-soft); }
+
+  @media (max-width: 860px) {
+    .hero-grid, .visit-grid { grid-template-columns: 1fr; }
+    .reasons-grid, .ways-grid { grid-template-columns: 1fr; }
+    .label { transform: rotate(-1deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .label { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap bar">
+  <a class="brand" href="#top">Bahçeli Can Petshop</a>
+  <a class="call" href="tel:+905432506262">Ara: 0543 250 62 62</a>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:clamp(40px,7vw,88px)">
+    <div class="wrap hero-grid">
+      <div>
+        <h1><span>Mahallenin</span><span>mama kapısı.</span></h1>
+        <p class="lead">Yukarı Bahçelievler'de taze mama, bakım ürünleri ve akvaryum malzemeleri. Dükkâna uğra ya da kapına getirelim.</p>
+      </div>
+
+      <form class="label" onsubmit="return false" aria-labelledby="label-title">
+        <h2 id="label-title">Evde kim var?</h2>
+        <p>Birini seç, bize WhatsApp'tan yaz.</p>
+        <fieldset class="chips">
+          <legend>Evcil hayvan türü</legend>
+          <label><input type="radio" name="pet" value="kedim için" checked><span>Kedi</span></label>
+          <label><input type="radio" name="pet" value="köpeğim için"><span>Köpek</span></label>
+          <label><input type="radio" name="pet" value="akvaryumum için"><span>Akvaryum</span></label>
+          <label><input type="radio" name="pet" value="evcil hayvanım için"><span>Başka</span></label>
+        </fieldset>
+        <a id="wa" class="cta" href="#" target="_blank" rel="noopener">WhatsApp'tan sor</a>
+        <p class="alt">Yazmak istemezsen <a href="tel:+905432506262">hemen ara</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="reasons" aria-labelledby="why">
+    <div class="wrap">
+      <div class="section-head"><h2 id="why">Müşterilerimiz neyi sevdiğini yazmış.</h2></div>
+      <div class="reasons-grid">
+        <div class="reason">
+          <h3>Mama taze</h3>
+          <p>Yorumlarda en çok geçen şeylerden biri: ürünlerin taze olması ve raflarda aradığını bulabilmek.</p>
+        </div>
+        <div class="reason">
+          <h3>Teslimat hızlı</h3>
+          <p>Siparişin evine kısa sürede ulaşıyor. Müşterilerimiz servisin hızından bahsediyor.</p>
+        </div>
+        <div class="reason">
+          <h3>Temiz dükkân, ilgili ekip</h3>
+          <p>Hijyen ve güler yüzlü ilgi, yorumlarda sık geçen iki övgü.</p>
+        </div>
+      </div>
+      <div class="rating">
+        <strong>4,9</strong>
+        <span>Google'da 119 değerlendirmenin ortalaması.</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ways">
+    <div class="wrap">
+      <div class="section-head"><h2 id="ways">Mamayı nasıl alırsın?</h2></div>
+      <div class="ways-grid">
+        <div class="way">
+          <h3>Dükkânda</h3>
+          <p>Gel, raflara bak, ihtiyacını birlikte seçelim.</p>
+        </div>
+        <div class="way">
+          <h3>Arabaya teslim</h3>
+          <p>Önceden yaz, dükkânın önüne gel. İnmene gerek yok.</p>
+        </div>
+        <div class="way">
+          <h3>Adrese servis</h3>
+          <p>Siparişini yaz, kapına getirelim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" aria-labelledby="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 id="visit">Bizi bul.</h2>
+        <address>Yukarı Bahçelievler<br>Azerbaycan Cd. 103/D<br>Çankaya, Ankara</address>
+        <dl>
+          <dt>Telefon</dt><dd><a href="tel:+905432506262">0543 250 62 62</a></dd>
+          <dt>Kapanış</dt><dd>Akşam 22:00</dd>
+        </dl>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Bah%C3%A7eli+Can+Petshop+Azerbaycan+Cd+103+Ankara" target="_blank" rel="noopener">Yol tarifi al</a>
+        <a class="btn ghost" href="tel:+905432506262">Ara</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Demo tasarım. Metinler ve iletişim bilgileri Bahçeli Can Petshop'un herkese açık Google Haritalar kaydına dayanır.</p>
+</footer>
+
+<script>
+  (function () {
+    var phone = "905432506262";
+    var link = document.getElementById("wa");
+    function update() {
+      var sel = document.querySelector('input[name="pet"]:checked');
+      var who = sel ? sel.value : "evcil hayvanım için";
+      var text = "Merhaba, " + who + " mama ve ürünler hakkında bilgi almak istiyorum.";
+      link.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+    }
+    document.querySelectorAll('input[name="pet"]').forEach(function (el) {
+      el.addEventListener("change", update);
+    });
+    update();
+  })();
+</script>
+</body>
+</html>
