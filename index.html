@@ -161,6 +161,54 @@
     .paws { display: none; }
     .hero { padding-top: 24px; }
   }
+  /* Telefon: daha ferah boşluklar ve büyük dokunma alanları */
+  @media (max-width: 640px) {
+    :root { --gutter: 24px; }
+    body { font-size: 1.0625rem; line-height: 1.7; }
+    .bar { padding-block: 18px; }
+    .bar { gap: 12px; }
+    .bar .brand { font-size: 1rem; white-space: nowrap; }
+    .bar a.call { padding: 9px 12px; font-size: .9rem; }
+
+    .hero { padding-top: 40px; padding-bottom: 72px; }
+    .hero-grid { gap: 112px; }
+    .label .cat { width: 92px; }
+    .hero h1 { font-size: 3.1rem; line-height: 1; }
+    .hero .lead { margin-top: 24px; font-size: 1.15rem; line-height: 1.6; max-width: none; }
+
+    .label { padding: 28px 24px 26px; }
+    .label h2 { font-size: 1.9rem; }
+    .label p { margin: 10px 0 22px; }
+    .chips { gap: 12px; margin-bottom: 26px; }
+    .chips label span { padding: 13px 20px; font-size: 1.02rem; }
+    .cta { padding: 19px 20px; font-size: 1.15rem; }
+    .label .alt { margin-top: 18px; }
+
+    section { padding: 72px 0; }
+    .section-head { margin-bottom: 36px; }
+    .section-head h2 { font-size: 2.1rem; line-height: 1.08; }
+
+    .reasons-grid { gap: 0; }
+    .reason { padding: 26px 0; border-top: 2px solid rgba(18,48,58,.14); }
+    .reason:first-child { border-top: 0; padding-top: 0; }
+    .reason h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .rating { margin-top: 28px; padding-top: 32px; gap: 10px 16px; }
+
+    .head-row { align-items: flex-end; }
+    .head-row .dog { width: 96px; margin-bottom: 36px; }
+    .ways-grid { gap: 18px; }
+    .way { padding: 28px 24px; }
+    .way h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+    .visit-grid { gap: 40px; }
+    .visit address { font-size: 1.25rem; line-height: 1.7; margin: 24px 0; }
+    .visit dl { gap: 10px 20px; }
+    .btns { flex-direction: column; gap: 14px; }
+    .btn { text-align: center; padding: 18px 22px; font-size: 1.05rem; }
+    .pets { margin: 18px auto 0; justify-content: center; }
+
+    footer { padding: 28px 0 48px; line-height: 1.6; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .label { animation: none; }
@@ -303,7 +351,7 @@
         <dl>
           <dt>Telefon</dt><dd><a href="tel:+905432506262">0543 250 62 62</a></dd>
           <dt>WhatsApp</dt><dd><a href="https://wa.me/905432506262" target="_blank" rel="noopener">0543 250 62 62</a></dd>
-          <dt>Kapanış</dt><dd>Akşam 22:00</dd>
+          <dt>Saatler</dt><dd>09:00 - 22:00</dd>
         </dl>
       </div>
       <div class="btns">
