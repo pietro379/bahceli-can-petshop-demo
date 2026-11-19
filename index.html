@@ -50,7 +50,7 @@
   .bar a.call:hover { background: var(--petrol); color: var(--white); }
 
   /* Hero */
-  .hero { padding: clamp(24px, 6vw, 72px) 0 clamp(40px, 7vw, 88px); }
+  .hero { padding-bottom: clamp(40px, 7vw, 88px); }
   .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
   .hero-grid > * { min-width: 0; }
   .hero h1 { font-size: clamp(2.6rem, 8vw, 6.2rem); font-weight: 800; overflow-wrap: break-word; }
@@ -139,7 +139,7 @@
     position: absolute; right: clamp(20px, 6%, 48px); bottom: calc(100% - 3px);
     width: clamp(96px, 14vw, 128px); z-index: 1; pointer-events: none;
   }
-  .hero { position: relative; overflow: hidden; }
+  .hero { position: relative; padding-top: calc(clamp(24px, 6vw, 72px) + 56px); }
   .hero .wrap { position: relative; }
   .paws { position: absolute; left: max(var(--gutter), calc((100% - 1120px) / 2 + var(--gutter))); bottom: 14px; display: flex; gap: 22px; opacity: .22; color: var(--petrol); pointer-events: none; }
   .paws svg { width: 26px; height: 26px; fill: currentColor; }
@@ -159,6 +159,7 @@
     .reasons-grid, .ways-grid { grid-template-columns: 1fr; }
     .label { transform: rotate(-1deg); }
     .paws { display: none; }
+    .hero { padding-top: 24px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -220,7 +221,7 @@
 </header>
 
 <main id="top">
-  <section class="hero" style="padding-bottom:clamp(40px,7vw,88px)">
+  <section class="hero">
     <div class="wrap hero-grid">
       <div>
         <h1><span>Mahallenin</span><span>mama kapısı.</span></h1>
